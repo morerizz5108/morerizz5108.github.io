@@ -34,8 +34,13 @@
 
       if(req.status == 200) {
         const obj = JSON.parse(req.responseText);
+		    var text = "";
         
-        document.getElementById("repos").innerText += "<br />" + obj.[0].name;
+        for (let i = 0; i < obj.length; i++) {
+  			  text += obj[i].name + "<br />";
+		    }
+		  
+		    document.getElementById("repos").innerHTML += text;
       }
     </script>
   </body>
