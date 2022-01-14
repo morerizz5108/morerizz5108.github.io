@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>mrehfeld-code</title>
+    
+    <style>
+      body {
+        background: #222;
+        color: #fff;
+        padding: 20px;
+      }
+      
+      #repos {
+        border-radius: 10px;
+        border: 2px #fff solid;
+        padding: 20px;
+        background-color: #333;
+        color: #fff;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div id="repos">
+      <h3>My Repos</h3>
+    </div>
+    
+    <script>
+      var req = new XMLHttpRequest();
+
+      req.open('GET', 'https://api.github.com/users/mrehfeld-code/repos', false);
+      req.send(null);
+
+      if(req.status == 200) {
+        const obj = JSON.parse(req.responseText);
+        
+        document.getElementById("repos").innerText += "<br />" + obj.[0].name;
+      }
+    </script>
+  </body>
+</html>
