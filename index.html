@@ -9,6 +9,7 @@
         background: #222;
         color: #fff;
         padding: 20px;
+	font-family: Arial, Verdana, sans-serif;
       }
       
       #repos {
@@ -37,7 +38,7 @@
 	var text = "";
         
         for (let i = 0; i < obj.length; i++) {
-	  text += obj[i].name + "<br />";
+	  text += "<a href='https://github.com/mrehfeld-code/" + obj[i].name + "' target='_blank'>" + obj[i].name + "</a><br />";
 	}
 		  
 	document.getElementById("repos").innerHTML += text;
