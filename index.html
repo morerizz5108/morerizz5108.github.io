@@ -23,9 +23,10 @@
                 <h1 class="card-title text-center">mrehfeld-code</h1>
                 
                 <h5 class="card-title">About Me</h5>
-                <p class="card-text">Hi, I'm <a href="https://github.com/mrehfeld-code/">mrehfeld-code</a>. I started coding in 2021 during the lockdown due to the pandamic as a hobby. 
-                    Latly I have been doing a lot with <a href="https://libsdl.org/">SDL</a>, <a href="https://opengl.org/">OpenGL</a> and other graphic APIs. All of my repositories are
-                    licensed under the <a href="https://mit-license.org/">MIT License</a> wich allows you to copy, edit and sell my code like you want.<br/></p>
+                <p class="card-text">Hi, I'm <a href="https://github.com/mrehfeld-code/">mrehfeld-code</a>. I started coding as a hobby during the lockdown in 2021. 
+                    Latly I have been doing a lot with <a href="https://libsdl.org/">SDL</a>, <a href="https://opengl.org/">OpenGL</a> and other graphic APIs. 
+                    All of my repositories are licensed under the <a href="https://mit-license.org/">MIT License</a> wich allows you to copy, edit and sell my code as you want 
+                    (as long as you mention it).<br/></p>
                 
                 <h5 class="card-title">My Repos</h5>
                 <p class="card-text">Below you can find a list of my public repositories:<br/></p>
@@ -52,14 +53,16 @@ if(req.status == 200) {
         if(obj[i].language === null) lang = "-"; 
         else lang = obj[i].language;
         
-        text += "<tr><th scope='row'>" + (i+1) + "</th><td><a href='https://github.com/mrehfeld-code/" + obj[i].name + "' target='_blank'>" + obj[i].name + "</a></th><th>" + lang + "</th></tr>";
+        text += "<tr><th scope='row'>" + (i+1) + "</th><td><a href='https://github.com/mrehfeld-code/" + obj[i].name + "' target='_blank'>" + obj[i].name + "</a></td><td>" + lang + "</td></tr>";
     }
 		  
     document.getElementById("repos").innerHTML += text;
 }
                         </script>
                     </tbody>
-                </table><small>JSON query from <a href="https://docs.github.com/en/rest">GitHub API</a></small><br/><br/>
+                </table>
+                <small class="text-secondary">JSON query from the <a href="https://docs.github.com/en/rest">GitHub API</a> &#124; 
+                    <a href="/detailed-info/">detailed information</a></small><br/><br/>
                 
                 <h5 class="card-title">Links</h5>
                 <p class="card-text"><a href="mailto:m.rehfeld.web@gmx.net" class="btn btn-primary"><i class="bi bi-envelope"></i> Mail</a>
