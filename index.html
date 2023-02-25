@@ -1,44 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="/style.css" type="text/css" media="all" />
-    <link rel="icon" href="/images/c++.png" type="image/png" media="all" />
-	  
-    <title>mrehfeld-code</title>
-	  
-    <style>
-      #repos {
-        border-radius: 10px;
-        padding: 20px;
-        background-color: #333;
-        color: #fff;
-	width: 50%;
-      }
-    </style>
-  </head>
-  
-  <body>
-    <div id="repos">
-      <h3>My Repos</h3>
-    </div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <script>
-      var req = new XMLHttpRequest();
+    <title>mrehfeld-code</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    
+    <link href="https://avatars.githubusercontent.com/u/85838780?s=40" rel="icon" />
+    
+    <style>body { background-color: #171a1d !important; }</style>
+</head>
+<body>
+    <div class="container p-5">
+        <div class="card text-bg-dark">
+            <div class="card-body">
+                <div class="text-center">
+                    <img class="card-img-top rounded-circle" style="max-width: 360px; max-height: 360px;" src="https://avatars.githubusercontent.com/u/85838780" />
+                </div>
+                <h1 class="card-title text-center">mrehfeld-code</h1>
+                
+                <h5 class="card-title">About Me</h5>
+                <p class="card-text">Hi, I'm <a href="https://github.com/mrehfeld-code/">mrehfeld-code</a>. I started coding in 2021 during the lockdown due to the pandamic as a hobby. 
+                    Latly I have been doing a lot with <a href="https://libsdl.org/">SDL</a>, <a href="https://opengl.org/">OpenGL</a> and other graphic APIs. All of my repositories are
+                    licensed under the <a href="https://mit-license.org/">MIT License</a> wich allows you to copy, edit and sell my code like you want.<br/></p>
+                
+                <h5 class="card-title">My Repos</h5>
+                <p class="card-text">Below you can find a list of my public repositories:<br/></p>
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Primary Language</th>
+                        </tr>
+                    </thead>
+                    <tbody id='repos'>
+                        <script>
+var req = new XMLHttpRequest();
 
-      req.open('GET', 'https://api.github.com/users/mrehfeld-code/repos', false);
-      req.send(null);
+req.open('GET', 'https://api.github.com/users/mrehfeld-code/repos', false);
+req.send(null);
 
-      if(req.status == 200) {
-        const obj = JSON.parse(req.responseText);
+if(req.status == 200) {
+    const obj = JSON.parse(req.responseText);
 	var text = "";
         
-        for (let i = 0; i < obj.length; i++) {
-	  text += "<a href='https://github.com/mrehfeld-code/" + obj[i].name + "' target='_blank'>" + obj[i].name + "</a><br />";
-	}
+    for (let i = 0; i < obj.length; i++) {
+        if(obj[i].language === null) lang = "-"; 
+        else lang = obj[i].language;
+        
+        text += "<tr><th scope='row'>" + (i+1) + "</th><td><a href='https://github.com/mrehfeld-code/" + obj[i].name + "' target='_blank'>" + obj[i].name + "</a></th><th>" + lang + "</th></tr>";
+    }
 		  
-	document.getElementById("repos").innerHTML += text;
-      }
-    </script>
-  </body>
+    document.getElementById("repos").innerHTML += text;
+}
+                        </script>
+                    </tbody>
+                </table><small>JSON query from <a href="https://docs.github.com/en/rest">GitHub API</a></small><br/><br/>
+                
+                <h5 class="card-title">Links</h5>
+                <p class="card-text"><a href="mailto:m.rehfeld.web@gmx.net" class="btn btn-primary"><i class="bi bi-envelope"></i> Mail</a>
+                    <a href="https://github.com/mrehfeld-code/" class="btn btn-primary"><i class="bi bi-github"></i> GitHub</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
