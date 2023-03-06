@@ -36,7 +36,12 @@
                     <li><a href="https://github.com/twbs/bootstrap/blob/v5.3.0-alpha1/LICENSE" target="_blank">Bootstrap CSS and JS</a></li>
                     <li><a href="https://github.com/twbs/bootstrap/blob/main/LICENSE" target="_blank">Bootstrap Icons</a></li>
                     <li><a href="https://pages.github.com/" target="_blank">GitHub Pages</a></li>
-                </ul>
+                </ul><br/>
+                
+                
+                <p class="card-text"><a href="/" class="btn btn-secondary"><i class="bi bi-house"></i> Home</a>
+                    <a href="mailto:m.rehfeld.web@gmx.net" class="btn btn-primary"><i class="bi bi-envelope"></i> Mail</a>
+                    <a href="https://github.com/mrehfeld-code/" class="btn btn-primary"><i class="bi bi-github"></i> GitHub</a></p>
             </div>
         </div>
     </div>
@@ -45,7 +50,7 @@
     <script>
         var req = new XMLHttpRequest();
 
-        req.open('GET', 'https://raw.githubusercontent.com/mrehfeld-code/mrehfeld-code.github.io/main/LICENSE', false);
+        req.open('GET', '/LICENSE', false);
         req.send(null);
 
         if(req.status == 200) {
