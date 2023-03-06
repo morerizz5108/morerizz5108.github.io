@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>mrehfeld-code</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    
+    <link href="https://avatars.githubusercontent.com/u/85838780?s=40" rel="icon" />
+    
+    <style>body { background-color: #171a1d !important; }</style>
+</head>
+<body>
+    <div class="container p-5">
+        <div class="card text-bg-dark">
+            <div class="card-body">
+                <h1 class="card-title">Copyright Notice</h1>
+                
+                <h5 class="card-title">License</h5>
+                <p class="card-text">This site is licensed under the <a href="https://mit-license.org/">MIT License</a>.
+                    You can find the license file <a href="https://github.com/mrehfeld-code/mrehfeld-code.github.io/blob/main/LICENSE">here</a>
+                    or expand the box below.</p>
+                
+                <p><a data-bs-toggle="collapse" href="#license" role="button" aria-expanded="false" aria-controls="#license">show license</a></p>
+                <div class="collapse" id="license">
+                    <div class="card card-body text-bg-secondary">
+                        <pre id="license-aria"></pre>
+                    </div>
+                </div><br />
+                
+                <h5 class="card-title">Third Party Software</h5>
+                <ul class="card-text">
+                    <li><a href="https://github.com/twbs/bootstrap/blob/v5.3.0-alpha1/LICENSE" target="_blank">Bootstrap CSS and JS</a></li>
+                    <li><a href="https://github.com/twbs/bootstrap/blob/main/LICENSE" target="_blank">Bootstrap Icons</a></li>
+                    <li><a href="https://pages.github.com/" target="_blank">GitHub Pages</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var req = new XMLHttpRequest();
+
+        req.open('GET', 'https://raw.githubusercontent.com/mrehfeld-code/mrehfeld-code.github.io/main/LICENSE', false);
+        req.send(null);
+
+        if(req.status == 200) {
+            document.getElementById("license-aria").innerHTML = req.responseText;
+        }
+    </script>
+</body>
+</html>
