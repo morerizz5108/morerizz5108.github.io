@@ -44,7 +44,6 @@
                 <p class="card-text"><small class="text-secondary">JSON query from the <a href="https://docs.github.com/en/rest">GitHub API</a></small></p>
                 
                 <h5 class="card-title">Links</h5>
-                <p class="card-text"><a href="mailto:m.rehfeld.web@gmx.net" class="btn btn-primary"><i class="bi bi-envelope"></i> Mail</a>
                     <a href="https://github.com/mrehfeld-code/" class="btn btn-primary"><i class="bi bi-github"></i> GitHub</a>
                     <a href="/copyright" class="btn btn-secondary">Copyright Notes</a></p>
             </div>
@@ -55,7 +54,7 @@
     <script>
         var req = new XMLHttpRequest();
 
-        req.open('GET', 'https://api.github.com/users/mrehfeld-code/repos', false);
+        req.open('GET', 'https://api.github.com/users/morerizz5108/repos', false);
         req.send(null);
 
         if(req.status == 200) {
@@ -66,7 +65,7 @@
                 if(obj[i].language === null) lang = "-"; 
                 else lang = obj[i].language;
         
-                text += "<tr><th scope='row'>" + (i+1) + "</th><td><a href='https://github.com/mrehfeld-code/" + obj[i].name + "' target='_blank'>" + obj[i].name + "</a></td><td>" + lang + "</td></tr>";
+                text += "<tr><th scope='row'>" + (i+1) + "</th><td><a href='https://github.com/morerizz5108/" + obj[i].name + "' target='_blank'>" + obj[i].name + "</a></td><td>" + lang + "</td></tr>";
             }
 		  
             document.getElementById("repos").innerHTML += text;
